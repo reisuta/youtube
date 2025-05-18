@@ -32,22 +32,16 @@ highlight_if_match() {
 }
 
 echo
-center_text "${BOLD}${CYAN}━━━ curl で叩ける便利サイト10選 ━━━${RESET}"
+center_text "${BOLD}${CYAN}━━━ 【モダンエディタに負けない】作業効率爆上げ！Vim/Neovimの必須基本知識 ━━━${RESET}"
 echo
 
-center_text "- $(highlight_if_match 0 "curl とは")"
-center_text "- $(highlight_if_match 1 "curl の基本的な使い方とオプション")"
-echo
-
-echo
-center_text "$(highlight_if_match 2 "1. wttr.in - 天気予報")"
-center_text "$(highlight_if_match 3 "2. httpbin.org - HTTPリクエストのテスト")"
-center_text "$(highlight_if_match 4 "3. ifconfig.io - グローバルIPアドレス確認")"
-center_text "$(highlight_if_match 5 "4. cheat.sh - コマンドのチートシート")"
-center_text "$(highlight_if_match 6 "5. qrenco.de - QRコード生成")"
-center_text "$(highlight_if_match 7 "6. rate.sx - 暗号通貨のレート確認")"
-center_text "$(highlight_if_match 8 "7. passwordrandom.comとopensslコマンド - パスワード生成")"
-center_text "$(highlight_if_match 9 "8. official-joke-api - ジョークAPI")"
-center_text "$(highlight_if_match 10 "9. hastebin.comとGitHub Gist - テキスト共有サービス")"
-center_text "$(highlight_if_match 11 "10. networkcalc.comとbcコマンド - 数値変換")"
+center_text "$(highlight_if_match 0 "0. はじめに-Vimを学ぶ意義")"
+center_text "$(highlight_if_match 1 "1. Vimとは何か？")"
+center_text "$(highlight_if_match 2 "2. Vim/Neovimのインストール")"
+center_text "$(highlight_if_match 3 "3. Vimの基本操作：モードの理解")"
+center_text "$(highlight_if_match 4 "4. 基本的なファイル操作")"
+center_text "$(highlight_if_match 5 "5. カーソル移動の基本")"
+center_text "$(highlight_if_match 6 "6. テキスト編集の基本")"
+center_text "$(highlight_if_match 7 "7. よく使うVimコマンド一覧")"
+center_text "$(highlight_if_match 8 "8. 今すぐ使える実践的なVimテクニック")"
 echo
