@@ -1,47 +1,40 @@
 #!/bin/bash
-
-HIGHLIGHT=${1:-0}
-
-TERM_WIDTH=$(tput cols)
-
+highlight=${1:-0}
+term_width=$(tput cols)
 center_text() {
   local text="$1"
   local text_length=${#text}
-  local text_without_color=$(echo -e "$text" | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" | sed -r "s/\x1B\[(38|48);5;[0-9]+m//g")
+  local text_without_color=$(echo -e "$text" | sed -r "s/\x1b\[([0-9]{1,2}(;[0-9]{1,2})?)?[mgk]//g" | sed -r "s/\x1b\[(38|48);5;[0-9]+m//g")
   local actual_length=${#text_without_color}
-  local padding=$(( (TERM_WIDTH - actual_length) / 2 ))
+  local padding=$(( (term_width - actual_length) / 2 ))
   echo -e "$(printf "%${padding}s" "")$text"
 }
-
-BOLD="\033[1m"
-CYAN="\033[1;36m"
-DARK_RED="\033[38;5;160m"
-BRIGHT_WHITE_BG="\033[48;5;231m"
-GRAY="\033[2;37m"
-RESET="\033[0m"
-
+bold="\033[1m"
+cyan="\033[1;36m"
+dark_red="\033[38;5;160m"
+bright_white_bg="\033[48;5;231m"
+gray="\033[2;37m"
+reset="\033[0m"
 highlight_if_match() {
   local index=$1
   local text=$2
-
-  if [ "$index" == "$HIGHLIGHT" ]; then
-    echo "${BOLD}${BRIGHT_WHITE_BG}${DARK_RED}${text}${RESET}"
+  if [ "$index" == "$highlight" ]; then
+    echo "${bold}${bright_white_bg}${dark_red}${text}${reset}"
   else
-    echo "${BOLD}${GRAY}${text}${RESET}"
+    echo "${bold}${gray}${text}${reset}"
   fi
 }
-
 echo
-center_text "${BOLD}${CYAN}━━━ 【モダンエディタに負けない】作業効率爆上げ！Vim/Neovimの必須基本知識 ━━━${RESET}"
+center_text "${bold}${cyan}━━━ 【作業効率爆上げ】vim設定ファイル(.vimrc)の作り方 ━━━${reset}"
+center_text "${bold}${cyan} -set/map/leader/autocmdを解説- ${reset}"
 echo
-
-center_text "$(highlight_if_match 0 "0. はじめに-Vimを学ぶ意義")"
-center_text "$(highlight_if_match 1 "1. Vimとは何か？")"
-center_text "$(highlight_if_match 2 "2. Vim/Neovimのインストール")"
-center_text "$(highlight_if_match 3 "3. Vimの基本操作：モードの理解")"
-center_text "$(highlight_if_match 4 "4. 基本的なファイル操作")"
-center_text "$(highlight_if_match 5 "5. カーソル移動の基本")"
-center_text "$(highlight_if_match 6 "6. テキスト編集の基本")"
-center_text "$(highlight_if_match 7 "7. よく使うVimコマンド一覧")"
-center_text "$(highlight_if_match 8 "8. 今すぐ使える実践的なVimテクニック")"
+center_text "$(highlight_if_match 0 "1.「自分だけのvimを作る理由」〜カスタマイズでvimの力を引き出す〜")"
+center_text "$(highlight_if_match 1 "2. 設定ファイルの作成")"
+center_text "$(highlight_if_match 2 "3. setコマンドと設定しておきたいオプションについて")"
+center_text "$(highlight_if_match 3 "4. キーボードショートカットを無限に増やすleaderキー活用法〜")"
+center_text "$(highlight_if_match 4 "5.【map/noremap】〜マッピングでキー操作を自在にカスタマイズ〜")"
+center_text "$(highlight_if_match 5 "6.「ユーザー定義コマンドで作業を自動化」〜頻繁な操作をコマンド一発で〜")"
+center_text "$(highlight_if_match 6 "7.【autocmd】〜ファイルに応じて自動で最適な環境に切り替わる仕組み〜")"
+center_text "$(highlight_if_match 7 "8. .vimrcのテンプレート 〜 設定ファイル例")"
+center_text "$(highlight_if_match 8 "9. 終わりに")"
 echo
