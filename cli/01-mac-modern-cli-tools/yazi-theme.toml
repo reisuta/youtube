@@ -1,0 +1,10 @@
+# 配置場所: ~/.config/yazi/theme.toml
+
+# テーマ設定例（ya pkg add yazi-rs/flavors:catppuccin-mocha でインストール後に有効）
+[flavor]
+use = "catppuccin-mocha"
+# ディレクトリの文字色を上書き（デフォルトの暗い青が見づらい場合）
+[filetype]
+rules = [
+  { url = "*/", fg = "cyan", bold = true },
+]
