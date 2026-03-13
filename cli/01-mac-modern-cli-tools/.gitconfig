@@ -1,0 +1,19 @@
+[core]
+    pager = delta
+
+[delta]
+    navigate = true
+    side-by-side = true
+    line-numbers = true
+    dark = true
+    syntax-theme = Dracula
+    file-style = bold yellow
+    file-decoration-style = bold yellow ul
+    line-numbers-left-style = cyan
+    line-numbers-right-style = cyan
+    line-numbers-zero-style = cyan
+    line-numbers-minus-style = red
+    line-numbers-plus-style = green
+
+[interactive]
+    diffFilter = delta --color-only
