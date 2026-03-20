@@ -1,0 +1,10 @@
+brew "zoxide"      # cd の上位互換
+brew "eza"         # ls の上位互換
+brew "bat"         # cat の上位互換
+brew "ripgrep"     # grep の上位互換
+brew "fzf"         # ファジーファインダー
+brew "yazi"        # ターミナルファイルマネージャー
+brew "atuin"       # history の上位互換
+brew "git-delta"   # git diff の上位互換
+brew "dust"        # du の上位互換
+brew "mise"        # nvm/pyenv/asdf の上位互換
