@@ -1,0 +1,23 @@
+# 実演用の lazygit 設定。lazygit --use-config-file demo/config.yml か LG_CONFIG_FILE で読む（実機の config.yml は読まない。state.yml は本来の場所に書かれる）
+disableStartupPopups: true
+update:
+  method: never
+gui:
+  nerdFontsVersion: "3"
+  language: en
+  showCommandLog: true
+  showBottomLine: true
+  theme:
+    activeBorderColor: [green, bold]
+    selectedLineBgColor: [reverse]
+git:
+  autoFetch: false
+  autoRefresh: true
+os:
+  editPreset: nvim
+customCommands:
+  - key: "!"
+    context: "global"
+    command: "ruby test/app_test.rb"
+    description: "run tests"
+    output: terminal
